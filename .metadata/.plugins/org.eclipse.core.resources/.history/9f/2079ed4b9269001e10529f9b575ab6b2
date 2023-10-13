@@ -1,0 +1,11 @@
+package com.kh.member.model.service;
+
+public class MemberService {
+	
+	
+	public void loginMember(String userId, String userPwd) {
+		
+	}
+	
+	
+}

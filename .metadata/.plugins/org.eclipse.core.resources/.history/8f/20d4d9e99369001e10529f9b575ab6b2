@@ -1,0 +1,13 @@
+package com.kh.member.model.dao;
+
+import java.sql.Connection;
+
+public class MemberDao {
+	
+	
+	public void loginMember(Connection conn, String userId, String userPwd) {
+		
+	}
+	
+	
+}

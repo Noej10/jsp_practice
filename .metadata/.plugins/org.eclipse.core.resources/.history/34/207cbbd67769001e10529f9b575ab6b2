@@ -1,0 +1,58 @@
+package com.kh.common;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+
+public class JDBCTemplate {
+	
+	// 1. Connection 객체 생성 후 Connection 객체 반환시켜주는 getConnection 메서드
+	public static Connection getConnection() {
+		
+		Connection conn = null;
+		
+		
+		try {
+			//jdbc 드라이버 등록
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			// 접속하고자 하는 db의 url, 게정명, 비밀번호 제시해서 Connection객체 생성
+			
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "SERVER", "SERVER");
+			
+		} catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		return conn;
+	}
+	
+	// 2. Connection 객체 전달받아 commit 처리 해주는 메서드
+	public void commit(Connection conn) {
+		
+	}
+	
+	// 3. Connection 객체 전달받아 rollback 처리 해주는 메서드
+	public void rollback(Connection conn) {
+		
+	}
+	
+	
+	// 4. Connection 객체 전달받아서 반납시켜주는 메서드
+	public void close(Connection conn) {
+		
+	}
+	
+	// 5. Statement관련 객체 전달받아서 반납시켜주는 메서드
+	public void close(Statement stmt) {
+		
+	}
+	
+	// 6. ResultSet 객체 전달받아서 반납시켜주는 메서드
+	public void close(ResultSet rSet) {
+		
+	}
+	
+}
