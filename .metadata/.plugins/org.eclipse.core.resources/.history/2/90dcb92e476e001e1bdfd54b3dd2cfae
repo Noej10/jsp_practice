@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectListCount">
+	SELECT COUNT(*) AS "COUNT"
+	FROM BOARD
+	WHERE BOARD_TYPE = 1 AND STATUS = 'Y'
+	</entry>
+</properties>

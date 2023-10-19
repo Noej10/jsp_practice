@@ -78,8 +78,17 @@ public class LoginController extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", loginUser);
 			
-			RequestDispatcher view = request.getRequestDispatcher("index.jsp");
-			view.forward(request, response);
+			//1. 포워딩 방식 => 해당 방식은 URL이 변경되지 않는다. => 우리는 localhost:8002/jsp라는 기존 메인화면에 url이 있는데
+			// 해당 방식으로 화면 응답 시 url은 localhost:8002/jsp/login.me 로 나타나며, 실제화면은 localhost:8002/jsp의 응답화면이 나타나게 된다.
+//			RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+//			view.forward(request, response);
+			
+			//2. url 재요청 방식
+			// 기존에 해당 페이지를 응답하는 url이 존재한다면 사용 가능
+			// 응답페이지 => index페이지 (jsp url 재요청)
+			
+			response.sendRedirect(request.getContextPath());
+			
 			
 		}
 		
